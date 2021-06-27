@@ -21,7 +21,6 @@ public class EmailServlet extends HttpServlet {
     @Autowired
     private EmailService emailService;
 
-    //Inject EmailService (Otherwise java.lang.NullPointerException Error)
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
@@ -46,7 +45,10 @@ public class EmailServlet extends HttpServlet {
         ObjectMapper objectMapper = new ObjectMapper();
 
         if (inputCaptcha.equalsIgnoreCase(trueCaptcha)) {
-            Email email = new Email(req.getParameter("name"), req.getParameter("email"), req.getParameter("text"));
+            Email email = new Email();
+            email.setSenderName(req.getParameter("name"));
+            email.setSenderText(req.getParameter("text"));
+            email.setSenderEmail(req.getParameter("email"));
             emailService.sendMessage(email);
             map.put("Result","Succeed");
         }else {

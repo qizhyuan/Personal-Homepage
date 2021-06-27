@@ -1,16 +1,19 @@
 package com.qzy.springboot.entities;
 
+import lombok.Data;
+import org.springframework.beans.factory.annotation.Value;
+
+@Data
 public class Email {
     private String senderName;
-    private String senderEmail;
-    private String senderText;
-    private final String myEmail = "your_email";
 
-    public Email(String senderName, String senderEmail, String senderText) {
-        this.senderName = senderName;
-        this.senderEmail = senderEmail;
-        this.senderText = senderText;
-    }
+    private String senderEmail;
+
+    private String senderText;
+
+    @Value("${spring.mail.username}")
+    private String myEmail;
+
 
     public String getSubject() {
         return "A Message From " + senderName + " | Email: " + senderEmail;

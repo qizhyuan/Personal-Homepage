@@ -27,8 +27,8 @@ public class DruidConfig {
     public ServletRegistrationBean statViewServlet() {
         ServletRegistrationBean<StatViewServlet> bean = new ServletRegistrationBean<>(new StatViewServlet(), "/druid/*");
         Map<String, String> initParam = new HashMap<>();
-        initParam.put(StatViewServlet.PARAM_NAME_USERNAME, "dodework");
-        initParam.put(StatViewServlet.PARAM_NAME_PASSWORD, "1129@@dy");
+        initParam.put(StatViewServlet.PARAM_NAME_USERNAME, "user_name");
+        initParam.put(StatViewServlet.PARAM_NAME_PASSWORD, "pass_word");
         bean.setInitParameters(initParam);
         return bean;
     }
