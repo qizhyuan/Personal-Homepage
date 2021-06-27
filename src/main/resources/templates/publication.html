@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="public :: head_common">
+</head>
+<script src="./js/custom.paper.js"></script>
+<body>
+<!-- Navigation start -->
+<header th:replace="public :: header_common">
+</header>
+<!-- Navigation end -->
+
+<!-- Content start -->
+<section id="publications" class="pfblock">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-6 col-sm-offset-3">
+
+                <div class="pfblock-header wow fadeInUp">
+                    <h2 class="pfblock-title">My Publications</h2>
+                    <div class="pfblock-line"></div>
+                </div>
+
+            </div>
+
+        </div><!-- .row -->
+
+        <h3 class="pub_subtitle" th:if="${!#lists.isEmpty(prePaperList)}">Preprint</h3>
+        <ol type=1 start=1>
+            <li th:each="paper : ${prePaperList}"><span name="item" th:text="${paper.author}"></span>, <a class="ptitle" th:text="${paper.title}" th:href="@{${paper.url}}"></a>, <a class="publisher" th:text="${paper.publisher}"></a>, <span th:text="${paper.date}"></span>.<span th:if="${!#strings.isEmpty(paper.note)}" th:text="' (' + ${paper.note} + ')'"></span></li>
+        </ol>
+
+        <h3 class="pub_subtitle" th:if="${!#lists.isEmpty(jouPaperList)}">Journal Paper</h3>
+        <ol type=1 start=1>
+            <li th:each="paper : ${jouPaperList}"><span name="item" th:text="${paper.author}"></span>, <a class="ptitle" th:text="${paper.title}" th:href="@{${paper.url}}"></a>, <a class="publisher" th:text="${paper.publisher}"></a>, <span th:if="${paper.vol ne 0}" th:text="'vol. ' + ${paper.vol} + ', '"></span><span th:if="${paper.num ne 0}" th:text="'no. ' + ${paper.num} + ', '"></span>pp. <span th:text="${paper.pageStart}"></span>-<span th:text="${paper.pageEnd}"></span>, <span th:text="${paper.date}"></span>.<span th:if="${!#strings.isEmpty(paper.note)}" th:text="' (' + ${paper.note} + ')'"></span></li>
+        </ol>
+
+        <h3 class="pub_subtitle" th:if="${!#lists.isEmpty(conPaperList)}">Conference Paper</h3>
+        <ol type=1 start=1>
+            <li th:each="paper : ${conPaperList}"><span name="item" th:text="${paper.author}"></span>, <a class="ptitle" th:text="${paper.title}" th:href="@{${paper.url}}"></a>, <a class="publisher" th:text="${paper.publisher}"></a>, <span th:if="${paper.vol ne 0}" th:text="'vol. ' + ${paper.vol} + ', '"></span><span th:if="${paper.num ne 0}" th:text="'no. ' + ${paper.num} + ', '"></span>pp. <span th:text="${paper.pageStart}"></span>-<span th:text="${paper.pageEnd}"></span>, <span th:text="${paper.date}"></span>.<span th:if="${!#strings.isEmpty(paper.note)}" th:text="' (' + ${paper.note} + ')'"></span></li>
+        </ol>
+
+
+    </div><!-- .contaier -->
+
+</section>
+<!-- Content end -->
+
+<!-- Footer start -->
+<footer th:replace="public :: footer_common"></footer>
+<!-- Footer end -->
+
+<!-- Scroll to top -->
+<div class="scroll-up" th:replace="public :: scroll_common"></div>
+<!-- Scroll to top end-->
+
+</body>
+</html>

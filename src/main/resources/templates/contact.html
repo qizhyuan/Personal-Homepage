@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="public :: head_common">
+</head>
+<script src="./js/custom.contact.js"></script>
+<body>
+<!-- Navigation start -->
+<header th:replace="public :: header_common">
+</header>
+<!-- Navigation end -->
+
+<!-- Contact start -->
+
+<section id="contact" class="pfblock">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-6 col-sm-offset-3">
+
+                <div class="pfblock-header">
+                    <h2 class="pfblock-title">Drop me a line</h2>
+                    <div class="pfblock-line"></div>
+                    <div class="pfblock-subtitle">
+                        You can contact me using the following form.
+                    </div>
+                </div>
+
+            </div>
+
+        </div><!-- .row -->
+
+        <div class="row">
+
+            <div class="col-sm-6 col-sm-offset-3">
+
+                <form id="contact-form" role="form">
+                    <div class="ajax-hidden">
+                        <div class="form-group wow fadeInUp">
+                            <label class="sr-only" for="c_name">Name</label>
+                            <input type="text" id="c_name" class="form-control" name="c_name" placeholder="Name">
+                        </div>
+
+                        <div class="form-group wow fadeInUp" data-wow-delay=".1s">
+                            <label class="sr-only" for="c_email">Email</label>
+                            <input type="email" id="c_email" class="form-control" name="c_email" placeholder="E-mail">
+                        </div>
+
+                        <div class="form-group wow fadeInUp" data-wow-delay=".2s">
+                            <textarea class="form-control" id="c_message" name="c_message" rows="7" placeholder="Message"></textarea>
+                        </div>
+
+                        <div class="form-group wow fadeInUp" data-wow-delay=".3s">
+                            <input type="text" class="form-check" id="check" name="InputCode" placeholder="Captcha">
+                            <img src="/captcha" id="captcha">
+                            <button type="button" id="refresh" onclick="myReload()">Refresh</button>
+                        </div>
+                        <button type="submit" class="btn btn-lg btn-block wow fadeInUp" data-wow-delay=".4s">Send Message</button>
+                        <input type="reset" name="reset" style="display: none;" />
+                    </div>
+                    <div class="ajax-response"></div>
+                </form>
+
+            </div>
+
+        </div><!-- .row -->
+    </div><!-- .container -->
+</section>
+
+<!-- Contact end -->
+
+<!-- Footer start -->
+<footer th:replace="public :: footer_common"></footer>
+<!-- Footer end -->
+
+<!-- Scroll to top -->
+<div class="scroll-up" th:replace="public :: scroll_common"></div>
+<!-- Scroll to top end-->
+
+</body>
+</html>

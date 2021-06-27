@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="public :: head_common">
+</head>
+<body>
+<!-- Navigation start -->
+<header th:replace="public :: header_common">
+</header>
+<!-- Navigation end -->
+
+<!-- Home start -->
+<section id="home" class="pfblock pfblock-gray">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-6 col-sm-offset-3">
+
+                <div class="pfblock-header wow fadeInUp">
+                    <h2 class="pfblock-title">Welcome to my homepage</h2>
+                    <div class="pfblock-line"></div>
+                    <div class="pfblock-subtitle">
+                        Hi, I am Li Hua!
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row" style="background:white">
+            <div class="col-sm-4">
+                <br>
+                <div class="biophoto">
+                    <img src="./images/Photo.jpg" alt="Photo" height="80%" width="auto"/>
+                </div>
+                <br>
+            </div>
+            <div class="col-sm-8">
+                <div class="biography">
+                    <p style="text-align:justify;text-justify:distribute;word-wrap:break-word"><br/><b>Biography</b>: Introduce Yourself Here.</p>
+                </div>
+                <br><br>
+                <div class="biography">
+                    <p style="text-align:justify;text-justify:distribute;word-wrap:break-word"><b>Curriculum Vitae</b>:&nbsp;&nbsp;<a href="./CV.pdf"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;<b>Email Address</b>: lihua@mail.com</p>
+                </div>
+
+            </div>
+        </div><!-- .row -->
+    </div><!-- .container -->
+</section>
+<!-- Home end -->
+
+<!-- Footer start -->
+<footer th:replace="public :: footer_common"></footer>
+<!-- Footer end -->
+
+<!-- Scroll to top -->
+<div class="scroll-up" th:replace="public :: scroll_common"></div>
+<!-- Scroll to top end-->
+
+</body>
+</html>
