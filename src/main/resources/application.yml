@@ -1,10 +1,10 @@
 spring:
   datasource:
     username: root
-    password: your_database_password
+    password: your_password
 
-#    url: jdbc:mysql://localhost:3306/webpage_db?serverTimezone=GMT%2B8
-    url: jdbc:mysql://your_url
+    # url: jdbc:mysql://localhost:3306/webpage_db?serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://localhost:xxxx/
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     initialSize: 8
